@@ -5,7 +5,6 @@
 
 * 日志对象一定要使用private static final修饰
     * 定义成static final,logger变量不可变，读取速度快
-    * 一些日志框架（log4j）会在打印日志的时候使用sychronized关键字，加上static以后没个类只会产生一个实例，这样在并发调用这个类的时候就不会因为抢不到Monitor而处于阻塞状态，可以提高系统的吞吐量
     * static 修饰的变量是不管创建了new了多少个实例，也只创建一次，节省空间，如果每次都创建Logger的话比较浪费内存；final修饰表示不可更改，常量
     * 将域定义为static,每个类中只有一个这样的域.而每一个对象对于所有的实例域却都有自己的一份拷贝.，用static修饰既节约空间，效率也好。final 是本 logger 不能再指向其他 Logger 对象
 
